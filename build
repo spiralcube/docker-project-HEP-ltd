@@ -1,7 +1,8 @@
 FROM ubuntu:latest
 LABEL "Author" = "spiralcube"
 LABEL "Project" = "nano"
-RUN apt update && install git -y
+RUN apt update
+RUN apt install git -y
 RUN apt install apache2 -y
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
